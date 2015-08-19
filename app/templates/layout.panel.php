@@ -9,7 +9,9 @@
 
 <body>
   <header class="header">
-  
+    <a href="/panel">Заказы</a>
+    <a href="/panel/menu_edit">Управление блюдами</a>
+    <a href="/panel/add_dish">Добавить новое блюдо</a>
   </header>
 
   <main>

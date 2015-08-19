@@ -8,17 +8,17 @@ function tpl($tpl, $cont="")
   return ob_get_clean();  
 }
 
-/*function tlog($str) 
+function tlog($str) 
 { //функция логирования
   $t = date("d-m-Y H:i:s");
   $w = addslashes($_SERVER['REQUEST_URI']);
   $h = fopen('logger.log' , 'ab');
   fwrite($h, $t . ' [' . $w . '] ' . $str . "\n");
-}*/
+}
 
 function error($handl)
  { //функция вызова ошибки
-  //tlog($handl);
+  tlog($handl);
   ob_end_clean();
   include('error.php');
   exit;

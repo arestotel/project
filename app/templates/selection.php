@@ -18,13 +18,13 @@
   <?= $value[sub_type] ?>:
   <br>
   <? foreach($cont[menu] as $menu): ?>
-  <? if($menu[sub_type] == $value[sub_type]): ?>
-  <?= $menu[name] ?>
-  <?= $menu[about] ?>
-  <?= $menu[weight] ?>
-  <?= $menu[price] ?>
-  <a href="/add_menu/<?= $menu[menu_id] ?>">Добавить к заказу</a>
-  <br>
+  <? if($menu[sub_type] == $value[sub_type] && $menu[have] == 1): ?>
+    <?= $menu[name] ?>
+    <?= $menu[about] ?>
+    <?= $menu[weight] ?>
+    <?= $menu[price] ?>
+    <a href="/add_menu/<?= $menu[menu_id] ?>">Добавить к заказу</a>
+    <br>
   <? endif; ?>
   <? endforeach; ?>
   <br>

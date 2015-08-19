@@ -1,6 +1,7 @@
 ﻿<? //контроллер главной страницы
 if($query[2]){
   $code = $query[2];
+  $_SESSION['time'] = time();
   $q = $mysqli->query("SELECT * FROM t_tables WHERE code = '$code'");
   $res = $q->fetch_assoc();
   if($res[tabl])
@@ -24,8 +25,12 @@ if($_SESSION['table']){
   }
   foreach($menu as $allMenu){
     foreach($_SESSION['order'] as $order){
-      if($order[0] == $allMenu[menu_id])
+      if($order[0] == $allMenu[menu_id]){
         $price+=$allMenu[price];
+        if($order[1] > 1){
+          $price*=$order[1];
+        }
+      }
     }
   }
   $result = [order => $youOrder, price => $price];

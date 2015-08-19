@@ -1,8 +1,9 @@
 <?
 session_start();
 ob_start();
-print_r($_SESSION['table']);
-print_r($_SESSION['order']);
+print_r($_SESSION['time']);
+if((time() - $_SESSION['time']) > 10)
+  unset($_SESSION['time']);
 require_once("func.php");
 require_once("config.php");
 require_once("router.php");
